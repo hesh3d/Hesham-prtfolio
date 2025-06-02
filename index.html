@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hesham | 3D Artist Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #121212;
+      color: #ddd;
+    }
+
+    header {
+      padding: 4rem 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .header-img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #000000aa;
+      transition: box-shadow 0.3s;
+    }
+
+    body.dark .header-img {
+      box-shadow: 0 0 20px #ffffff;
+    }
+
+    .header-text {
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .header-text h1 {
+      font-size: 2.7rem;
+      margin: 0 0 0.5rem;
+      color: #1a1a1a;
+      transition: color 0.3s;
+    }
+
+    body.dark .header-text h1 {
+      color: #eee;
+    }
+
+    .header-text p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #4a90e2;
+      margin-top: 3rem;
+      text-align: center;
+      transition: color 0.3s;
+    }
+
+    body.dark h2 {
+      color: #72aaff;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 0.5rem;
+      width: 300px;
+      height: auto;
+      box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f4fb;
+    }
+
+    body.dark .card {
+      background-color: #1e1e1e;
+      box-shadow: 0 2px 8px rgb(255, 255, 255);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(0, 0, 0);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    body.dark .card img {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill {
+      background: #e1e9f7;
+      color: #4a90e2;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark .skill {
+      background: #2a3a62;
+      color: #72aaff;
+      box-shadow: 0 2px 8px rgba(74, 144, 226, 0.7);
+    }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact a {
+      background: #4a90e2;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #4a90e2;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .contact a:hover {
+      background: #357ABD;
+      box-shadow: 0 0 25px #357ABD;
+    }
+
+    /* زر التبديل المثبت */
+    #toggle-theme {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4a90e2;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px #4a90e2;
+      transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    #toggle-theme:hover {
+      background: #357ABD;
+      box-shadow: 0 0 25px #357ABD;
+      transform: scale(1.1);
+    }
+    .about-me {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.about-me h2 {
+  font-size: 1.5rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.about-me p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+.header-text h1,
+.header-text > p,
+.about-me h2,
+.about-me p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.header-text h1 {
+  animation-delay: 0.2s;
+}
+
+.header-text > p {
+  animation-delay: 0.4s;
+}
+
+.about-me h2 {
+  animation-delay: 0.8s;
+}
+
+.about-me p:nth-of-type(1) {
+  animation-delay: 1.2s;
+}
+
+.about-me p:nth-of-type(2) {
+  animation-delay: 1.6s;
+}
+
+.about-me p:nth-of-type(3) {
+  animation-delay: 2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    footer {
+  background-color: #4a90e2;
+  color: #eee;
+  text-align: center;
+  padding: 8px 5px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+    
+  </style>
+</head>
+<body>
+  <header data-aos="fade-down">
+  <div class="header-content">
+    <img src="images/01_Me/IMG_0108.HEIC" alt="Hesham" class="header-img" />
+    <div class="header-text">
+  <h1>Hesham 3D</h1>
+  <p>3D Artist | Product Animation | VFX</p>
+
+  <div class="about-me">
+    <h2>About Me</h2>
+    <p>Hi, I’m Hesham, a 3D artist specializing in product animation and visual effects.</p>
+    <p>I create immersive visuals that bring products to life.</p>
+    <p>From perfumes to lighting scenes, my work merges precision with creativity.</p>
+  </div>
+</div>
+
+  </div>
+</header>
+
+
+  
+
+  <section class="section" data-aos="flip-left">
+    <h2>Lighting Projects</h2>
+    <div class="cards">
+      <div class="card" data-aos="zoom-in" data-aos-delay="0"><img src="images/02_Lighting Projects/01_Lighting.png" alt="Lighting Icon" /></div>
+      <div class="card" data-aos="zoom-in-up" data-aos-delay="100"><img src="images/02_Lighting Projects/02_Lighting.png" alt="Lighting Icon" /></div>
+      <div class="card" data-aos="zoom-in-down" data-aos-delay="200"><img src="images/02_Lighting Projects/03_Lighting.png" alt="Lighting Icon" /></div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="flip-down">
+    <h2>VFX Videos</h2>
+    <div class="cards">
+      <div class="card" data-aos="fade-right" data-aos-delay="0">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="images/03_VFX Videos/01_VFX.mp4" type="video/mp4" />
+          متصفحك لا يدعم عرض الفيديو.
+        </video>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="images/03_VFX Videos/02_VFX.mp4" type="video/mp4" />
+          متصفحك لا يدعم عرض الفيديو.
+        </video>
+      </div>
+      <div class="card" data-aos="fade-left" data-aos-delay="200">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="images/06_General Animation/03_Ray-Ban.mp4" type="video/mp4" />
+          متصفحك لا يدعم عرض الفيديو.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="slide-up">
+    <h2>Perfume Animations</h2>
+    <div class="cards">
+      <div class="card" data-aos="zoom-out" data-aos-delay="0"><img src="images/04_Perfume Animations/Post.002.png" alt="Perfume Icon" /></div>
+      <div class="card" data-aos="zoom-in-up" data-aos-delay="100"><img src="images/04_Perfume Animations/Post.001.png" alt="Perfume Icon" /></div>
+      <div class="card" data-aos="zoom-in-down" data-aos-delay="200"><img src="images/04_Perfume Animations/Post.003" alt="Perfume Icon" /></div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="flip-up">
+    <h2>Jewelry 3D Work</h2>
+    <div class="cards">
+      <div class="card" data-aos="fade-right" data-aos-delay="0"><img src="images/05_Jewelry 3D Work/Jewels_01.png" alt="Jewelry Image 1" /></div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100"><img src="images/05_Jewelry 3D Work/Jewels_02.png" alt="Jewelry Icon" /></div>
+      <div class="card" data-aos="fade-left" data-aos-delay="200"><img src="images/05_Jewelry 3D Work/Jewels_03.png" alt="Jewelry Icon" /></div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="flip-down">
+    <h2>General Animation</h2>
+    <div class="cards">
+      <div class="card" data-aos="fade-right" data-aos-delay="0">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="images/06_General Animation/01_OGLU.mp4" type="video/mp4" />
+          متصفحك لا يدعم عرض الفيديو.
+        </video>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="images/06_General Animation/02_Jewels.mp4" type="video/mp4" />
+          متصفحك لا يدعم عرض الفيديو.
+        </video>
+      </div>
+      <div class="card" data-aos="fade-left" data-aos-delay="200">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="images/06_General Animation/03_Ray-Ban.mp4" type="video/mp4" />
+          متصفحك لا يدعم عرض الفيديو.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Blender</div>
+      <div class="skill">After Effects</div>
+      <div class="skill">Premiere</div>
+      <div class="skill">Photoshop</div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <div class="contact">
+      <a href="https://www.instagram.com/hesh.3d/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://wa.me/970595798878" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </section>
+
+  <button id="toggle-theme" aria-label="Toggle Dark Mode">🌙</button>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 900 });
+
+    const toggleBtn = document.getElementById('toggle-theme');
+    const body = document.body;
+
+    // Load theme from localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  </script>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 Hesham 3D. All rights reserved.</p>
+    <p>Follow me on 
+      <a href="https://www.instagram.com/hesh.3d/" target="_blank">Instagram</a> | 
+      <a href="https://wa.me/970595798878" target="_blank">WhatsApp</a>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>
