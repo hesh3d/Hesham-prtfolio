@@ -1,0 +1,371 @@
+/* ========== الأساسيات والستايل العام للجسم (Body) ========== */
+body {
+  margin: 0;
+  background-color: #f5f7fa;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ddd;
+}
+
+/* ========== الهيدر ومحتواه ========== */
+header {
+  padding: 4rem 1rem 2rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.header-img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #000000aa;
+  transition: box-shadow 0.3s;
+}
+
+body.dark .header-img {
+  box-shadow: 0 0 20px #ffffff;
+}
+
+.header-text {
+  text-align: left;
+  max-width: 500px;
+}
+
+.header-text h1 {
+  font-size: 2.7rem;
+  margin: 0 0 0.5rem;
+  color: #1a1a1a;
+  transition: color 0.3s;
+}
+
+body.dark .header-text h1 {
+  color: #eee;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* ========== فقرة About Me ========== */
+.about-me {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.about-me h2 {
+  font-size: 1.5rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.about-me p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+/* ========== العناوين العامة للأقسام ========== */
+h2 {
+  font-size: 2rem;
+  color: #4a90e2;
+  margin-top: 3rem;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+body.dark h2 {
+  color: #72aaff;
+}
+
+/* ========== الأقسام الرئيسية في الموقع ========== */
+.section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ========== ترتيب الكروت داخل الأقسام ========== */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* ========== كروت الصور والفيديوهات العادية ========== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 0.5rem;
+  width: 300px;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f4fb;
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgb(255, 255, 255);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgb(0, 0, 0);
+}
+
+/* ========== صور داخل الكروت ========== */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+body.dark .card img {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ========== فيديو يوتيوب عادي (ما بستخدم حاليا) ========== */
+.card.video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+/* ========== فقرة المهارات والبرامج (Skills) ========== */
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ========== أيقونات البرامج داخل Skills ========== */
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark .skill-icon {
+  background: #2a3a62;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== روابط التواصل الإجتماعي (Instagram, WhatsApp) ========== */
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact a {
+  background: #4a90e2;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 15px #4a90e2;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.contact a:hover {
+  background: #357ABD;
+  box-shadow: 0 0 25px #357ABD;
+}
+
+/* ========== زر تبديل الوضع الليلي/النهاري ========== */
+#toggle-theme {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #4a90e2;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+#toggle-theme:hover {
+  background: #357ABD;
+  box-shadow: 0 0 25px #357ABD;
+  transform: scale(1.1);
+}
+
+/* ========== أنيميشن ظهور النصوص في About Me ========== */
+.header-text h1,
+.header-text > p,
+.about-me h2,
+.about-me p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.header-text h1 { animation-delay: 0.2s; }
+.header-text > p { animation-delay: 0.4s; }
+.about-me h2 { animation-delay: 0.8s; }
+.about-me p:nth-of-type(1) { animation-delay: 1.2s; }
+.about-me p:nth-of-type(2) { animation-delay: 1.6s; }
+.about-me p:nth-of-type(3) { animation-delay: 2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== الفوتر السفلي (Footer) ========== */
+footer {
+  background-color: #4a90e2;
+  color: #eee;
+  text-align: center;
+  padding: 8px 5px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========== تنسيق خاص لفيديوهات اليوتيوب العمودية (Shorts) ========== */
+.card.video-vertical {
+  width: 300px;
+  height: 533px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card.video-vertical iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+/* ========== 🎯 Responsive تعديل لتنسيق الموقع على الشاشات الصغيرة ========== */
+@media (max-width: 768px) {
+
+  /* 🔹 صورة الهيدر تصغر تلقائياً */
+  .header-img {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* 🔹 النصوص تتوسّط وتقل شوي */
+  .header-text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .header-text p {
+    text-align: center;
+  }
+
+  .about-me {
+    text-align: center;
+  }
+
+  .about-me h2 {
+    text-align: center;
+  }
+
+  .about-me p {
+    text-align: center;
+  }
+
+  /* 🔹 الكروت تتكدس تحت بعض */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 🔹 كروت الصور والفيديوهات تأخذ عرض أكبر للجوال */
+  .card {
+    width: 90%;
+  }
+
+  /* 🔹 فيديوهات العمودية (shorts) تناسب الجوال */
+  .card.video-vertical {
+    width: 90vw;
+    height: calc(90vw * 1.77); /* نسبة أبعاد 9:16 تقريباً */
+  }
+
+  .card.video-vertical iframe {
+    width: 120%;
+    height: 120%;
+  }
+
+  /* 🔹 أيقونات المهارات تصغر شوي */
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* 🔹 روابط التواصل تصير عمودية */
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 🔹 زر الوضع الليلي يصغر شوي */
+  #toggle-theme {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+}
