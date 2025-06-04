@@ -170,8 +170,8 @@ body.dark .card img {
 
 /* ========== أيقونات البرامج داخل Skills ========== */
 .skill-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   border-radius: 12px;
   background: #ffffff;
@@ -298,74 +298,51 @@ footer a:hover {
   transform: translate(-50%, -50%);
   border: none;
 }
-/* ========== 🎯 Responsive تعديل لتنسيق الموقع على الشاشات الصغيرة ========== */
+/* ========== 🎯 تعديل بسيط للموبايل بدون ما يغيّر شكل الكروت ========== */
 @media (max-width: 768px) {
 
-  /* 🔹 صورة الهيدر تصغر تلقائياً */
+  /* 🔹 فقط تصغير حجم النصوص وتحسين التوسيط، بدون تعديل على الكروت */
   .header-img {
     width: 90%;
     max-width: 300px;
   }
 
-  /* 🔹 النصوص تتوسّط وتقل شوي */
   .header-text h1 {
     font-size: 2rem;
     text-align: center;
   }
 
-  .header-text p {
-    text-align: center;
-  }
-
-  .about-me {
-    text-align: center;
-  }
-
-  .about-me h2 {
-    text-align: center;
-  }
-
+  .header-text p,
+  .about-me,
+  .about-me h2,
   .about-me p {
     text-align: center;
   }
 
-  /* 🔹 الكروت تتكدس تحت بعض */
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* 🔹 كروت الصور والفيديوهات تأخذ عرض أكبر للجوال */
-  .card {
-    width: 90%;
-  }
-
-  /* 🔹 فيديوهات العمودية (shorts) تناسب الجوال */
-  .card.video-vertical {
-    width: 90vw;
-    height: calc(90vw * 1.77); /* نسبة أبعاد 9:16 تقريباً */
-  }
-
-  .card.video-vertical iframe {
-    width: 120%;
-    height: 120%;
-  }
-
-  /* 🔹 أيقونات المهارات تصغر شوي */
+  /* 🔹 المهارات والزر وبعض التفاصيل */
   .skill-icon {
     width: 60px;
     height: 60px;
   }
 
-  /* 🔹 روابط التواصل تصير عمودية */
   .contact {
     flex-direction: column;
     align-items: center;
   }
 
-  /* 🔹 زر الوضع الليلي يصغر شوي */
   #toggle-theme {
     padding: 10px 16px;
     font-size: 16px;
   }
+
+  /* ⚠️ ملاحظـة: تم إلغاء تعديل شكل الكروت والفيديوهات تماماً */
 }
+/* 🎯 حجم موحّد للأيقونات داخل العناوين */
+.section-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-left: 0px; /* لأنك حاطها على اليمين */
+  vertical-align: middle; /* 🔥 يحل مشكلة الارتفاع */
+}
+
