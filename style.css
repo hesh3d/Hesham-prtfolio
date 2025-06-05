@@ -122,28 +122,32 @@ body.dark h2 {
   margin: auto;
 }
 
+/* ========== ترتيب الكروت داخل الأقسام ========== */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem 0;
 }
 
+/* ========== كروت الصور والفيديوهات العادية ========== */
 .card {
   background: #ffffff;
   border-radius: 16px;
   padding: 0.5rem;
+  flex: 0 0 30%;
+  max-width: 30%;
   height: auto;
   box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f0f4fb;
+  position: relative;
   overflow: hidden;
 }
-
-
 
 body.dark .card {
   background-color: #1e1e1e;
@@ -295,17 +299,23 @@ footer a:hover {
 /* ========== تحسين العرض على الجوال ========== */
 @media (max-width: 768px) {
   .cards {
-    justify-content: center;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
   }
 
   .card {
-    width: 45%;
-    max-width: 170px;
+    flex: 0 0 auto;
+    min-width: 250px;
+    scroll-snap-align: start;
+    margin-right: 1rem;
   }
 
   .card.video-vertical {
-    width: 45%;
+    min-width: 250px;
     height: auto;
     aspect-ratio: 9 / 16;
   }
@@ -338,4 +348,3 @@ footer a:hover {
     margin-top: 2rem;
   }
 }
-
