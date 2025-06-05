@@ -305,6 +305,7 @@ footer a:hover {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 1rem;
+    scroll-padding-left: 1rem; /* 👈 يجعل أول كرت ملاصق لليسار */
   }
 
   .card {
@@ -312,6 +313,10 @@ footer a:hover {
     min-width: 250px;
     scroll-snap-align: start;
     margin-right: 1rem;
+  }
+
+  .card:first-child {
+    margin-left: 1rem; /* 👈 حتى يظهر أول كرت بمسافة من اليسار */
   }
 
   .card.video-vertical {
