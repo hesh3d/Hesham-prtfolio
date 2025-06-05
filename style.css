@@ -301,12 +301,17 @@ footer a:hover {
     padding-right: 1rem;
     scroll-padding-left: 1rem;
     gap: 1rem;
+    justify-content: start;
   }
 
   .card {
     flex: 0 0 85%;
     max-width: 85%;
     scroll-snap-align: start;
+  }
+
+  .cards > .card:first-child {
+    margin-left: 0;
   }
 
   .card.video-vertical {
