@@ -297,19 +297,19 @@ footer a:hover {
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-left: 0;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
   .card {
-    flex: 0 0 auto;
-    width: 250px;
+    flex: 0 0 85%;
+    max-width: 85%;
     scroll-snap-align: start;
     margin-right: 1rem;
   }
 
   .card:first-child {
-     margin-left: 1rem;
+    margin-left: 0;
   }
 
   .card.video-vertical {
