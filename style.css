@@ -305,18 +305,19 @@ footer a:hover {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 1rem;
-    scroll-padding-left: 1rem; /* 👈 يجعل أول كرت ملاصق لليسار */
+    scroll-padding-left: 0;
   }
 
   .card {
     flex: 0 0 auto;
     min-width: 250px;
     scroll-snap-align: start;
+    margin-left: 0;
     margin-right: 1rem;
   }
 
   .card:first-child {
-    margin-left: 1rem; /* 👈 حتى يظهر أول كرت بمسافة من اليسار */
+    margin-left: 0;
   }
 
   .card.video-vertical {
