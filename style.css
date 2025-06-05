@@ -341,3 +341,37 @@ footer a:hover {
     margin-top: 2rem;
   }
 }
+
+/* ========== 🎯 عدد الكروت حسب حجم الشاشة ========== */
+
+/* شاشة صغيرة جدًا (هاتف صغير جدًا): كرت واحد */
+@media (max-width: 480px) {
+  .card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* شاشة متوسطة (أجهزة مثل iPhone 8 أو SE): كرتين */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+
+/* شاشة كبيرة (iPhone Pro Max وما شابه): 3 كروت */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+
+/* تأكيد أن display: flex; شغالة على .cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
