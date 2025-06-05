@@ -291,24 +291,25 @@ footer a:hover {
 
 @media (max-width: 768px) {
   .cards {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
+    padding-left: 0;
+    padding-right: 1rem;
   }
 
   .card {
     flex: 0 0 auto;
-    min-width: 250px;
+    width: 250px;
     scroll-snap-align: start;
     margin-right: 1rem;
   }
 
   .card:first-child {
-    margin-left: 0;
+     margin-left: 1rem;
   }
 
   .card.video-vertical {
