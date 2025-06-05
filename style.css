@@ -125,18 +125,20 @@ body.dark h2 {
 /* ========== ترتيب الكروت داخل الأقسام ========== */
 .cards {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem 0;
 }
+
 
 /* ========== كروت الصور والفيديوهات العادية ========== */
 .card {
   background: #ffffff;
   border-radius: 16px;
   padding: 0.5rem;
-  width: 300px;
+  flex: 0 0 30%;
+  max-width: 30%;
   height: auto;
   box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
@@ -147,6 +149,7 @@ body.dark h2 {
   position: relative;
   overflow: hidden;
 }
+
 
 body.dark .card {
   background-color: #1e1e1e;
@@ -342,36 +345,3 @@ footer a:hover {
   }
 }
 
-/* ========== 🎯 عدد الكروت حسب حجم الشاشة ========== */
-
-/* شاشة صغيرة جدًا (هاتف صغير جدًا): كرت واحد */
-@media (max-width: 480px) {
-  .card {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* شاشة متوسطة (أجهزة مثل iPhone 8 أو SE): كرتين */
-@media (min-width: 481px) and (max-width: 768px) {
-  .card {
-    flex: 0 0 48%;
-    max-width: 48%;
-  }
-}
-
-/* شاشة كبيرة (iPhone Pro Max وما شابه): 3 كروت */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .card {
-    flex: 0 0 30%;
-    max-width: 30%;
-  }
-}
-
-/* تأكيد أن display: flex; شغالة على .cards */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
