@@ -28,13 +28,13 @@ header {
 .header-img {
   width: 300px;
   height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #000000aa;
+  border-radius: 12px; 
+  box-shadow: none;
   transition: box-shadow 0.3s;
 }
 
 body.dark .header-img {
-  box-shadow: 0 0 20px #ffffff;
+  box-shadow: none;
 }
 
 .header-text {
@@ -125,70 +125,109 @@ body.dark h2 {
 /* ========== ترتيب الكروت داخل الأقسام ========== */
 .cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 0 1rem;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* ========== كروت الصور والفيديوهات العادية ========== */
 .card {
-  background: #ffffff;
-  border-radius: 16px;
+  background: none;
+  border-radius: 12px;
   padding: 0.5rem;
-  flex: 0 0 30%;
+  flex: 0 0 30%; /* عرض كل صورة 30% لعرض 3 صور في المرة */
   max-width: 30%;
   height: auto;
-  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+  box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f4fb;
+  background-color: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 body.dark .card {
-  background-color: #1e1e1e;
-  box-shadow: 0 2px 8px rgb(255, 255, 255);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgb(0, 0, 0);
+  background-color: none;
 }
 
 .card img {
   max-width: 100%;
   height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: none;
   transition: box-shadow 0.3s;
 }
 
 body.dark .card img {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: none;
 }
 
-.card.video-vertical {
-  width: 300px;
-  height: 533px;
-  position: relative;
-  overflow: hidden;
+/* ========== الصورة الرابعة مخفية عند التحميل وتظهر عند التمرير باستخدام الأسهم ========== */
+.fourth-card {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
 }
 
-.card.video-vertical iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  transform: translate(-50%, -50%);
+/* ========== تصميم الأسهم تحت الصور في قسم المجوهرات ========== */
+.arrows {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.arrow {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border: none;
+  text-align: center;
+  line-height: 50px;
+  transform: translateY(-3px);
 }
 
+.arrow:hover {
+  transform: scale(1.1) translateY(-3px);
+  background-color: #357ABD;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.arrow.left {
+  margin-left: 15px;
+}
+
+.arrow.right {
+  margin-right: 15px;
+}
+
+/* ========== قسم المجوهرات مع تحريك الصور ككتلة ========== */
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-wrapper .arrows {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+/* ========== قسم Skills ========== */
 .skills {
   display: flex;
   justify-content: center;
@@ -204,20 +243,21 @@ body.dark .card img {
   border-radius: 12px;
   background: #ffffff;
   padding: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* تأثير الظل الخفيف */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 body.dark .skill-icon {
   background: #2a3a62;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* تأثير الظل في الوضع الداكن */
 }
 
 .skill-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* تكبير الظل عند التمرير */
 }
 
+/* ========== قسم Contact ========== */
 .contact {
   display: flex;
   justify-content: center;
@@ -241,6 +281,7 @@ body.dark .skill-icon {
   box-shadow: 0 0 25px #357ABD;
 }
 
+/* ========== Theme Toggle Button ========== */
 #toggle-theme {
   position: fixed;
   bottom: 30px;
@@ -289,6 +330,27 @@ footer a:hover {
   vertical-align: middle;
 }
 
+/* ========== إعادة حجم الفيديوهات في VFX Videos و General Animation ========== */
+.card.video-vertical {
+  width: 100%; /* تأكد أن الفيديو يأخذ العرض الكامل */
+  height: 0;
+  padding-bottom: 55.0%; /* نسبة الأبعاد (16:9) = 55% */
+  position: relative;
+  overflow: hidden;
+}
+
+.card.video-vertical iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+
+/* للأجهزة التي تقل عرض شاشتها عن 1200px */
 @media (max-width: 1199px) {
   .cards {
     display: flex;
