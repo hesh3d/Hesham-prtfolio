@@ -391,13 +391,14 @@ footer a:hover {
   /* تعديل الخطوط في النصوص */
   .header-text h1 {
     font-size: 1.8rem;
+    text-align: center; /* مركزية النص في الحقل */
   }
 
   .header-text p,
   .about-me h2,
   .about-me p {
     font-size: 1rem;
-    text-align: center; /* مركزية النصوص في الشاشات الصغيرة */
+    text-align: center; /* مركزية النصوص في جميع الحقول */
   }
 
   /* تعديل حجم أزرار تغيير الوضع */
@@ -416,6 +417,17 @@ footer a:hover {
   /* إخفاء الأسهم في الشاشات الصغيرة */
   .arrows {
     display: none; /* إخفاء الأسهم */
+  }
+
+  /* مركزية النصوص في الأقسام المختلفة */
+  .section {
+    text-align: center; /* وضع النصوص في المنتصف داخل الأقسام */
+    padding: 2rem 1rem; /* مسافات حول الأقسام */
+  }
+
+  /* التأكد من أن .about-me في المنتصف */
+  .about-me {
+    text-align: center;
   }
 }
 
