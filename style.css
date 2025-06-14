@@ -352,6 +352,7 @@ footer a:hover {
 
 /* للأجهزة التي تقل عرض شاشتها عن 1200px */
 @media (max-width: 1199px) {
+  /* تعديل تصميم الكروت لتناسب الشاشات الصغيرة */
   .cards {
     display: flex;
     flex-wrap: nowrap;
@@ -367,7 +368,7 @@ footer a:hover {
   }
 
   .card {
-    flex: 0 0 85%;
+    flex: 0 0 85%; /* تعديل عرض الكارد ليتناسب مع الشاشات الصغيرة */
     max-width: 85%;
     scroll-snap-align: start;
   }
@@ -383,10 +384,11 @@ footer a:hover {
   }
 
   .header-img {
-    width: 70%;
+    width: 70%; /* تعديل حجم الصورة على الشاشات الصغيرة */
     max-width: 250px;
   }
 
+  /* تعديل الخطوط في النصوص */
   .header-text h1 {
     font-size: 1.8rem;
   }
@@ -395,9 +397,10 @@ footer a:hover {
   .about-me h2,
   .about-me p {
     font-size: 1rem;
-    text-align: center;
+    text-align: center; /* مركزية النصوص في الشاشات الصغيرة */
   }
 
+  /* تعديل حجم أزرار تغيير الوضع */
   #toggle-theme {
     padding: 8px 12px;
     font-size: 14px;
@@ -409,8 +412,14 @@ footer a:hover {
     font-size: 1.5rem;
     margin-top: 2rem;
   }
+
+  /* إخفاء الأسهم في الشاشات الصغيرة */
+  .arrows {
+    display: none; /* إخفاء الأسهم */
+  }
 }
 
+/* إخفاء شريط التمرير */
 .cards::-webkit-scrollbar {
   display: none;
 }
